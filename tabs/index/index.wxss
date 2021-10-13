@@ -1,0 +1,88 @@
+/* tabs/index/index.wxss */
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 300rpx;
+  line-height: 300rpx;
+  background-color: rgba(0, 0, 255, 0.3);
+  margin-bottom: 50rpx;
+}
+
+.table{
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30rpx;
+  margin-top: 30rpx;
+}
+
+.line{
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  width: 100%;
+  height: 150rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.lable{
+  margin-top: 20rpx;
+  width: 130rpx;
+  height: 130rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10rpx;
+  margin-left: 18rpx;
+  flex: 0 0 130rpx
+}
+
+.l_img{
+  width: 100rpx;
+  height: 100rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 10px;
+  background-color: rgba(0, 0, 255, 0.3);
+  flex: 0 0 100rpx
+}
+
+.l_txt{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 10px;
+}
+
+.listbar{
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.element {
+  width: 200rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(137, 43, 226, 0.3);
+  margin-right: 5rpx;
+  margin-bottom: 30rpx;
+  flex: 0 0 100px
+}
+
+.mvbox {
+  width: 100%;
+  height: 1000rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(255, 0, 0, 0.3);
+}

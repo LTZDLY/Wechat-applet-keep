@@ -1,0 +1,50 @@
+<!--tabs/index/index.wxml-->
+<view class="header">
+  标题图
+</view>
+
+<view class="table">
+  <view class="line">
+    <view class="lable" bindtap="bindViewTap">
+      <view class="l_img">[图片]</view>
+      <view class="l_txt">描述</view>
+    </view>
+    <view class="lable">
+      <view class="l_img">[图片]</view>
+      <view class="l_txt">描述</view>
+    </view>
+    <view class="lable">
+      <view class="l_img">[图片]</view>
+      <view class="l_txt">描述</view>
+    </view>
+    <view class="lable">
+      <view class="l_img">[图片]</view>
+      <view class="l_txt">描述</view>
+    </view>
+    <view class="lable">
+      <view class="l_img">[图片]</view>
+      <view class="l_txt">描述</view>
+    </view>
+  </view>
+</view>
+
+<!--
+<scroll-view scroll-x>
+  <view class="listbar">
+    <view class="element">123</view>
+    <view class="element">133</view>
+    <view class="element">144</view>
+    <view class="element">155</view>
+    <view class="element">166</view>
+    <view class="element">166</view>
+    <view class="element">166</view>
+  </view>
+</scroll-view>
+-->
+
+<scroll-view scroll-y>
+  <view class="mvbox">
+  
+  </view>
+</scroll-view>
+<text>tabs/index/index.wxml</text>

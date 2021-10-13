@@ -1,0 +1,109 @@
+/* pages/search/search.wxss */
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 300rpx;
+  line-height: 300rpx;
+  background-color: rgba(0, 0, 255, 0.3);
+  margin-bottom: 50rpx;
+}
+
+.listbar{
+  display: flex;
+  flex-wrap: nowrap;
+}
+/*顶部切换*/
+
+.tab-h {
+  height: 80rpx;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  line-height: 80rpx;
+  background: #f7f7f7;
+  font-size: 16px;
+  white-space: nowrap;
+  top: 0;
+  left: 0;
+  z-index: 99;
+}
+
+.tab-item {
+  margin: 0 150rpx;
+  display: inline-block;
+}
+
+.tab-item.active {
+  color: #4675f9;
+  position: relative;
+}
+
+.tab-item.active:after {
+  content: "";
+  display: block;
+  height: 8rpx;
+  width: 150rpx;
+  background: #4675f9;
+  position: absolute;
+  bottom: 0;
+  left: -38rpx;
+  border-radius: 16rpx;
+}
+
+.filter{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 200rpx;
+  background-color: rgba(0, 0, 0, 0.3);
+  margin-bottom: 50rpx;
+}
+
+.mvlist{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  background-color: rgba(255, 0, 0, 0.3);
+  margin-bottom: 50rpx;
+}
+
+.mvbox{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 250rpx;
+  background-color: rgba(0, 255, 0, 0.3);
+  margin-top: 50rpx;
+}
+
+.cover{
+  display: flex;
+  flex-direction: column;
+  width: 200rpx;
+  height: 200rpx;
+  flex: 0, 0, 200rpx;
+  background-color: rgba(0, 0, 0, 0.3);
+  margin-left: 30rpx;
+  margin-top: 25rpx;
+}
+
+.describe{
+  display: flex;
+  flex-direction: column;
+  height: 200rpx;
+  margin-left: 30rpx;
+  margin-top: 25rpx;
+}
+
+.title{
+}
+
+.time{
+  font-family: cursive;
+  font-size: 35rpx;
+  color: rgba(0, 0, 0, 0.8);
+  margin-top: 20rpx;
+}
