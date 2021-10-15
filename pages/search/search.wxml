@@ -3,10 +3,29 @@
   这里放些什么
 </view>
 
-<scroll-view scroll-x="true" class="tab-h" scroll-left="{{scrollLeft}}">
-  <view class="tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="swichNav">有氧</view>
-  <view class="tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="swichNav">无氧</view>
-</scroll-view>
+<view class="switch-tab">
+  <view class="tab-line">
+    <view class="tab-title">测试</view>
+    <scroll-view scroll-x="true" class="tab-h" scroll-left="{{scrollLeft}}">
+      <view class="tab-item {{currentTabs[0]==0?'active':''}}" data-id="0" data-current="0" data-txt="" bindtap="swichNav">全部</view>
+      <view class="tab-item {{currentTabs[0]==1?'active':''}}" data-id="0" data-current="1" data-txt="有氧"  bindtap="swichNav">有氧</view>
+      <view class="tab-item {{currentTabs[0]==2?'active':''}}" data-id="0" data-current="2" data-txt="无氧"  bindtap="swichNav">无氧</view>
+    </scroll-view>
+  </view>
+  <view class="divLine"></view>
+  <view class="tab-line">
+    <view class="tab-title">级别</view>
+    <scroll-view scroll-x="true" class="tab-h" scroll-left="{{scrollLeft}}">
+      <view class="tab-item {{currentTabs[1]==0?'active':''}}" data-id="1" data-current="0" data-txt="" bindtap="swichNav">全部</view>
+      <view class="tab-item {{currentTabs[1]==1?'active':''}}" data-id="1" data-current="1" data-txt="初级" bindtap="swichNav">初级</view>
+      <view class="tab-item {{currentTabs[1]==2?'active':''}}" data-id="1" data-current="2" data-txt="中级" bindtap="swichNav">中级</view>
+      <view class="tab-item {{currentTabs[1]==3?'active':''}}" data-id="1" data-current="3" data-txt="高级" bindtap="swichNav">高级</view>
+    </scroll-view>
+  </view>
+  <view class="divLine"></view>
+</view>
+
+
 <!--
 <view class="mvlist">
   <view class="mvbox">
@@ -65,7 +84,7 @@
 -->
 
 <view class="mvlist">
-  <view wx:for="{{mvdata}}">
+  <view wx:for="{{mvshow}}">
     <view class="mvbox" bindtap="showVideo" data-id='{{item.id}}'>
       <image class="cover" src="{{item.cover}}" mode="aspectFill"></image>
       <view class="describe">
@@ -79,3 +98,5 @@
     </view>
   </view>
 </view>
+  <view class="divLine"></view>
+  <view class="divText">到底啦</view>

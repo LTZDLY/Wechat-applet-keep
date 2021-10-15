@@ -7,30 +7,40 @@ Page({
   data: {
     interval: 5000,
     duration: 500,
-    currentTab: 0, //预设当前项的值
+    currentTabs: [], //预设当前项的值
+    tags: [],
     scrollLeft: 0, //tab标题的滚动条位置
     mvdata: {},
+    mvshow: {},
   },
   // 滚动切换标签样式
-  switchTab: function(e) {
+  switchTab: function (e) {
     this.setData({
       currentTab: e.detail.current
     });
     this.checkCor();
   },
   // 点击标题切换当前页时改变样式
-  swichNav: function(e) {
+  swichNav: function (e) {
     var cur = e.target.dataset.current; //查询标题序号
-    if (this.data.currentTaB == cur) {
+    var id = e.target.dataset.id; //查询标题序号
+    if (this.data.currentTabs[id] == cur) {
       return false;
     } else {
+      var txt = e.target.dataset.txt;
+      var temp = this.data.tags;
+      var temp1 = this.data.currentTabs;
+      temp[id] = txt;
+      temp1[id] = cur;
       this.setData({
-        currentTab: cur
+        currentTabs: temp1,
+        tags: temp,
       })
+      this.sift(temp);
     }
   },
   //判断当前滚动超过一屏时，设置tab标题滚动条。
-  checkCor: function() {
+  checkCor: function () {
     if (this.data.currentTab > 4) {
       this.setData({
         scrollLeft: 300
@@ -41,32 +51,59 @@ Page({
       })
     }
   },
-
+  sift: function (e) {
+    console.log(e)
+    var temp = new Array();
+    for (let i = 0; i < this.data.mvdata.length; i++) {
+      var f = true;
+      for (let j = 0; j < e.length; j++) {
+        if (e[j] == "") {
+          continue;
+        }
+        if (this.data.mvdata[i]["tag"].indexOf(e[j]) == -1) {
+          f = false;
+          break;
+        }
+      }
+      if (f) {
+        temp.push(this.data.mvdata[i]);
+      }
+    }
+    this.setData({
+      mvshow: temp,
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     var that = this
-  	wx.request ({
-      url:  "http://localhost:5000/api/getvideo",
+    wx.request({
+      url: "http://localhost:5000/api/getvideo",
       method: 'get',
-      success (res) {
-        if (res) { 
+      success(res) {
+        if (res) {
           for (let index = 0; index < res.data["data"].length; index++) {
             res.data["data"][index]["cover"] = "http://101.133.237.83:8000" + res.data["data"][index]["cover"]
             res.data["data"][index]["url"] = "http://101.133.237.83:8000" + res.data["data"][index]["url"]
           }
-          console.log(res.data)  // 打印查看是否请求到接口数据
+          var arr = new Array();
+          arr[0] = arr[1] = arr[2] = "";
+          console.log(res.data) // 打印查看是否请求到接口数据
+          var tabs = [...arr];
           that.setData({
-          	// 将获取到的数据赋值给数组对象中
+            // 将获取到的数据赋值给数组对象中
             mvdata: res.data["data"],
+            mvshow: res.data["data"],
+            tags: arr,
+            currentTabs: tabs,
           })
           // 开始获取数据 eg: textBox(获取文字内容)
-        }	else {
+        } else {
           console.log('没有数据')
         }
       }
-    }) 
+    })
   },
 
   /**
@@ -117,7 +154,7 @@ Page({
   onShareAppMessage: function () {
 
   },
-  showVideo: function(e){
+  showVideo: function (e) {
     let id = e.currentTarget.dataset.id;
     wx.navigateTo({
       url: '/pages/video/video?id=' + id,
