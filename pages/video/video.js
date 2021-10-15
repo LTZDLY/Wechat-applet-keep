@@ -12,7 +12,27 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that=this;
+    console.log(options);
+    wx.request({
+      url: 'http://localhost:5000/api/getvideodetails?id=' + options.id,
+      method: "get",
+      success (res) {
+        if (res) { 
+          console.log(res.data)  // 打印查看是否请求到接口数据
+          res.data["cover"] = "http://101.133.237.83:8000" + res.data["cover"]
+          res.data["url"] = "http://101.133.237.83:8000" + res.data["url"]
+          that.setData({
+            // 将获取到的数据赋值给数组对象中
+            mvinfo: res.data,
+          })
+          // 开始获取数据 eg: textBox(获取文字内容)
+        }	else {
+          console.log('没有数据')
+        }
+      }
+    })
+    console.log(this.data)
   },
 
   /**

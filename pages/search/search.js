@@ -9,6 +9,7 @@ Page({
     duration: 500,
     currentTab: 0, //预设当前项的值
     scrollLeft: 0, //tab标题的滚动条位置
+    mvdata: {},
   },
   // 滚动切换标签样式
   switchTab: function(e) {
@@ -45,7 +46,27 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that = this
+  	wx.request ({
+      url:  "http://localhost:5000/api/getvideo",
+      method: 'get',
+      success (res) {
+        if (res) { 
+          for (let index = 0; index < res.data["data"].length; index++) {
+            res.data["data"][index]["cover"] = "http://101.133.237.83:8000" + res.data["data"][index]["cover"]
+            res.data["data"][index]["url"] = "http://101.133.237.83:8000" + res.data["data"][index]["url"]
+          }
+          console.log(res.data)  // 打印查看是否请求到接口数据
+          that.setData({
+          	// 将获取到的数据赋值给数组对象中
+            mvdata: res.data["data"],
+          })
+          // 开始获取数据 eg: textBox(获取文字内容)
+        }	else {
+          console.log('没有数据')
+        }
+      }
+    }) 
   },
 
   /**
@@ -95,5 +116,11 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  showVideo: function(e){
+    let id = e.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: '/pages/video/video?id=' + id,
+    })
   }
 })

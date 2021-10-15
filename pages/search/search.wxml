@@ -7,7 +7,7 @@
   <view class="tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="swichNav">有氧</view>
   <view class="tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="swichNav">无氧</view>
 </scroll-view>
-
+<!--
 <view class="mvlist">
   <view class="mvbox">
     <view class="cover">
@@ -58,6 +58,23 @@
       </view>
       <view class="time">
         18分钟
+      </view>
+    </view>
+  </view>
+</view>
+-->
+
+<view class="mvlist">
+  <view wx:for="{{mvdata}}">
+    <view class="mvbox" bindtap="showVideo" data-id='{{item.id}}'>
+      <image class="cover" src="{{item.cover}}" mode="aspectFill"></image>
+      <view class="describe">
+        <view class="title">
+          {{item.title}}
+        </view>
+        <view class="time">
+          {{item.time}}
+        </view>
       </view>
     </view>
   </view>
