@@ -1,29 +1,40 @@
 <!--tabs/index/index.wxml-->
 <view class="header">
-  标题图
+  <swiper class="header" indicator-dots autoplay circular>
+  <block wx:for="{{background}}">
+    <swiper-item>
+      <view class="index">
+        <image src="{{'http://101.133.237.83:8000/source/index/'+ item}}" mode="aspectFit"></image>
+      </view>
+    </swiper-item>
+  </block>
+    <swiper-item>
+      <image class="index" src="http://101.133.237.83:8000/source/cover/10002.jpg" mode="aspectFit"></image>
+    </swiper-item>
+  </swiper>
 </view>
 
 <view class="table">
   <view class="line">
     <view class="lable" bindtap="bindViewTap">
       <view class="l_img">[图片]</view>
-      <view class="l_txt">描述</view>
+      <view class="l_txt">课程</view>
     </view>
     <view class="lable">
       <view class="l_img">[图片]</view>
-      <view class="l_txt">描述</view>
+      <view class="l_txt">打卡</view>
     </view>
     <view class="lable">
       <view class="l_img">[图片]</view>
-      <view class="l_txt">描述</view>
+      <view class="l_txt">交友</view>
     </view>
     <view class="lable">
       <view class="l_img">[图片]</view>
-      <view class="l_txt">描述</view>
+      <view class="l_txt">通知</view>
     </view>
     <view class="lable">
       <view class="l_img">[图片]</view>
-      <view class="l_txt">描述</view>
+      <view class="l_txt">私教</view>
     </view>
   </view>
 </view>
@@ -44,7 +55,7 @@
 
 <scroll-view scroll-y>
   <view class="mvbox">
-  
+    <text>为你推荐</text>
   </view>
 </scroll-view>
 <text>tabs/index/index.wxml</text>

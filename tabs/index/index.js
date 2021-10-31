@@ -1,4 +1,7 @@
 Page({
+  data: {
+    background: ["DSC_4471-2.jpg","teachersday.jpg"]
+  },
   onShow(){
     if (typeof this.getTabBar === 'function' &&
     this.getTabBar()) {

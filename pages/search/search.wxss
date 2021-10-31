@@ -6,7 +6,7 @@
   width: 100%;
   height: 300rpx;
   line-height: 300rpx;
-  background-color: rgba(0, 0, 255, 0.3);
+  background-color: rgb(185, 190, 255);
   margin-bottom: 50rpx;
 }
 
@@ -118,7 +118,7 @@
   flex-direction: row;
   width: 100%;
   height: 250rpx;
-  background-color: rgba(0, 255, 0, 0.3);
+  background-color: rgba(0, 255, 115, 0.3);
   margin-top: 50rpx;
 }
 

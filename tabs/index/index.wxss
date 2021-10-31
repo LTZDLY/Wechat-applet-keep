@@ -1,13 +1,8 @@
 /* tabs/index/index.wxss */
 .header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  height: 300rpx;
-  line-height: 300rpx;
-  background-color: rgba(0, 0, 255, 0.3);
-  margin-bottom: 50rpx;
+  width: 750rpx;
+  height: 421.875rpx;
+  background-color: rgba(0, 0, 0, 0.08);
 }
 
 .table{
@@ -84,5 +79,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgba(255, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.08);
+}
+
+.index{
+  width: 750rpx;
+  height: 421.875rpx;
+  line-height: 421.875rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

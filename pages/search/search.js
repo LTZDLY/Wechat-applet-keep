@@ -1,17 +1,15 @@
 // pages/search/search.js
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
-    interval: 5000,
-    duration: 500,
     currentTabs: [], //预设当前项的值
-    tags: [],
     scrollLeft: 0, //tab标题的滚动条位置
-    mvdata: {},
-    mvshow: {},
+    num: 3,
+    tabs: ["初级", "中级", "高级"],
+    unum: 9,
+    utabs: ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
   },
   // 滚动切换标签样式
   switchTab: function (e) {
@@ -32,6 +30,19 @@ Page({
       var temp1 = this.data.currentTabs;
       temp[id] = txt;
       temp1[id] = cur;
+      console.log(id)
+      if (id == 0) {
+        if (txt == "有氧") {
+          temp[2] = "";
+          temp1[2] = "";
+        }
+        if (txt == "无氧") {
+          temp[1] = "";
+          temp1[1] = "";
+        }
+      }
+      console.log(temp)
+      console.log(temp1)
       this.setData({
         currentTabs: temp1,
         tags: temp,
@@ -52,7 +63,6 @@ Page({
     }
   },
   sift: function (e) {
-    console.log(e)
     var temp = new Array();
     for (let i = 0; i < this.data.mvdata.length; i++) {
       var f = true;
@@ -97,6 +107,7 @@ Page({
             mvshow: res.data["data"],
             tags: arr,
             currentTabs: tabs,
+            utabs: [1, 2, 3, 4, 5, 6, 7, 8, 9]
           })
           // 开始获取数据 eg: textBox(获取文字内容)
         } else {

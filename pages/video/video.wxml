@@ -2,7 +2,6 @@
 <view class="header">
   <video class="header" id="myVideo" src="{{mvinfo.url}}">
   </video>
-
 </view>
 
 <view class="empty">
