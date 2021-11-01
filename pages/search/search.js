@@ -4,6 +4,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    background: ["DSC_4471-2.jpg","teachersday.jpg"],
     currentTabs: [], //预设当前项的值
     scrollLeft: 0, //tab标题的滚动条位置
     num: 3,

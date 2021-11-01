@@ -12,8 +12,61 @@
   height: 128rpx;
   margin: 20rpx;
   border-radius: 50%;
+  margin-bottom: 20rpx;
 }
 
 .usermotto {
   margin-top: 200rpx;
+}
+.divLine{
+  margin-top: 200rpx;
+  background: rgba(0, 0, 0, 0.3);
+  width: 100%;
+  height: 5rpx;
+ }
+
+ .tab-line{
+   margin-top: 20rpx;
+   display: flex;
+   flex-direction: row;
+   height: 50rpx;
+   line-height: 50rpx;
+   width: 100%;
+ }
+
+ .tab-h {
+   height: 50rpx;
+   width: 100%;
+   box-sizing: border-box;
+   overflow: hidden;
+   line-height: 50rpx;
+   font-size: 16px;
+   white-space: nowrap;
+   top: 0;
+   left: 0;
+   z-index: 99;
+ }
+ 
+
+.tab-item {
+  font-size: 30rpx;
+  margin: 0 100rpx;
+  display: inline-block;
+}
+
+.tab-item.active {
+  color: rgb(175, 104, 104);
+  position: relative;
+}
+
+.tab-item.active:after {
+  content: "";
+  display: block;
+  height: 8rpx;
+  width: 160rpx;
+  background: rgb(175, 104, 104);
+  position: absolute;
+  bottom: 0;
+  left: -25rpx;
+  border-radius: 16rpx;
 }

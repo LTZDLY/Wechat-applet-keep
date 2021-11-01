@@ -17,23 +17,23 @@
 <view class="table">
   <view class="line">
     <view class="lable" bindtap="bindViewTap">
-      <view class="l_img">[图片]</view>
+      <image class="l_img" src="/image/0.png"></image>
       <view class="l_txt">课程</view>
     </view>
     <view class="lable">
-      <view class="l_img">[图片]</view>
+      <image class="l_img" src="/image/1.png"></image>
       <view class="l_txt">打卡</view>
     </view>
     <view class="lable">
-      <view class="l_img">[图片]</view>
+      <image class="l_img" src="/image/2.png"></image>
       <view class="l_txt">交友</view>
     </view>
     <view class="lable">
-      <view class="l_img">[图片]</view>
+      <image class="l_img" src="/image/3.png"></image>
       <view class="l_txt">通知</view>
     </view>
     <view class="lable">
-      <view class="l_img">[图片]</view>
+      <image class="l_img" src="/image/4.png"></image>
       <view class="l_txt">私教</view>
     </view>
   </view>

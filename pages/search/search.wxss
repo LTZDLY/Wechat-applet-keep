@@ -1,13 +1,16 @@
 /* pages/search/search.wxss */
 .header {
+  width: 750rpx;
+  height: 421.875rpx;
+  background-color: rgba(0, 0, 0, 0.08);
+}
+.index{
+  width: 750rpx;
+  height: 421.875rpx;
+  line-height: 421.875rpx;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
-  height: 300rpx;
-  line-height: 300rpx;
-  background-color: rgb(185, 190, 255);
-  margin-bottom: 50rpx;
 }
 
 .switch-tab{

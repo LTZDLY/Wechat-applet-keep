@@ -8,12 +8,32 @@ Page({
     }
   },
   data: {
+    currentTabs: 0, //预设当前项的值
+    scrollLeft: 0, //tab标题的滚动条位置
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     canIUseGetUserProfile: false,
     canIUseOpenData: wx.canIUse('open-data.type.userAvatarUrl') && wx.canIUse('open-data.type.userNickName') // 如需尝试获取用户信息可改为false
+  },
+  // 滚动切换标签样式
+  switchTab: function (e) {
+    this.setData({
+      currentTab: e.detail.current
+    });
+    this.checkCor();
+  },
+  // 点击标题切换当前页时改变样式
+  swichNav: function (e) {
+    var cur = e.target.dataset.current; //查询标题序号
+    if (this.data.currentTabs == cur) {
+      return false;
+    } else {
+      this.setData({
+        currentTabs: cur,
+      })
+    }
   },
   // 事件处理函数
   bindViewTap() {
