@@ -1,10 +1,15 @@
 /* pages/search/search.wxss */
+.container {
+  background-color: rgba(0, 0, 0, 0.08);
+}
+
 .header {
   width: 750rpx;
   height: 421.875rpx;
   background-color: rgba(0, 0, 0, 0.08);
 }
-.index{
+
+.index {
   width: 750rpx;
   height: 421.875rpx;
   line-height: 421.875rpx;
@@ -13,16 +18,14 @@
   align-items: center;
 }
 
-.switch-tab{
+.switch-tab {
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 300rpx;
-  background-color: rgba(0, 0, 255, 0.3);
-  margin-bottom: 50rpx;
+  background: rgba(0, 0, 255, 0.2);
 }
 
-.tab-line{
+.tab-line {
   margin-top: 20rpx;
   display: flex;
   flex-direction: row;
@@ -31,22 +34,22 @@
   width: 100%;
 }
 
-.tab-title{
+.tab-title {
   height: 50rpx;
-  width: 100rpx;
+  width: 200rpx;
   font-size: 16px;
   margin-left: 25rpx;
   margin-right: 25rpx;
   font-size: 30rpx;
 }
 
-.divLine{
+.divLine {
   background: rgba(0, 0, 0, 0.3);
   width: 100%;
   height: 5rpx;
- }
+}
 
- .divText{
+.divText {
   display: flex;
   color: rgba(0, 0, 0, 0.3);
   width: 100%;
@@ -54,12 +57,13 @@
   align-items: center;
   flex-direction: column;
   align-items: center;
- }
+}
 
-.listbar{
+.listbar {
   display: flex;
   flex-wrap: nowrap;
 }
+
 /*顶部切换*/
 
 .tab-h {
@@ -98,7 +102,7 @@
   border-radius: 16rpx;
 }
 
-.filter{
+.filter {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -107,25 +111,25 @@
   margin-bottom: 50rpx;
 }
 
-.mvlist{
+.mvlist {
   display: flex;
   flex-direction: column;
   width: 100%;
   height: auto;
-  /*background-color: rgba(255, 0, 0, 0.3);*/
+  background-color: rgb(255, 255, 255);
   margin-bottom: 50rpx;
 }
 
-.mvbox{
+.mvbox {
   display: flex;
   flex-direction: row;
   width: 100%;
   height: 250rpx;
-  background-color: rgba(0, 255, 115, 0.3);
+  background-color: rgba(0, 0, 0, 0.03);
   margin-top: 50rpx;
 }
 
-.cover{
+.cover {
   display: flex;
   flex-direction: column;
   width: 200rpx;
@@ -136,7 +140,7 @@
   margin-top: 25rpx;
 }
 
-.describe{
+.describe {
   display: flex;
   flex-direction: column;
   height: 200rpx;
@@ -144,9 +148,16 @@
   margin-top: 25rpx;
 }
 
-.time{
+.time {
   font-family: cursive;
   font-size: 35rpx;
   color: rgba(0, 0, 0, 0.8);
   margin-top: 20rpx;
+}
+
+.tag {
+  font-family: cursive;
+  font-size: 30rpx;
+  color: rgba(0, 0, 0, 0.5);
+  margin-top: 40rpx;
 }

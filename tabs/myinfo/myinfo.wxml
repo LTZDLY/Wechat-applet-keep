@@ -21,8 +21,10 @@
   <view class="page">
     <view class="tab-line">
       <scroll-view scroll-x="true" class="tab-h" scroll-left="{{scrollLeft}}">
-        <view class="tab-item {{currentTabs==0?'active':''}}" data-current="0" data-txt="我的收藏" bindtap="swichNav">我的收藏</view>
-        <view class="tab-item {{currentTabs==1?'active':''}}" data-current="1" data-txt="历史记录" bindtap="swichNav">历史记录</view>
+        <view class="tab-item {{currentTabs==0?'active':''}}" data-current="0" data-txt="我的收藏" bindtap="swichNav">我的收藏
+        </view>
+        <view class="tab-item {{currentTabs==1?'active':''}}" data-current="1" data-txt="历史记录" bindtap="swichNav">历史记录
+        </view>
       </scroll-view>
     </view>
   </view>

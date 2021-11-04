@@ -4,7 +4,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    background: ["DSC_4471-2.jpg","teachersday.jpg"],
+    background: ["DSC_4471-2.jpg", "teachersday.jpg"],
     currentTabs: [], //预设当前项的值
     scrollLeft: 0, //tab标题的滚动条位置
     num: 3,
@@ -67,11 +67,20 @@ Page({
     var temp = new Array();
     for (let i = 0; i < this.data.mvdata.length; i++) {
       var f = true;
-      for (let j = 0; j < e.length; j++) {
-        if (e[j] == "") {
-          continue;
+
+      if (e[0] == "") {
+        if (this.data.mvdata[i]["tag"].indexOf("有氧") != -1) {
+          if (e[1] != "" && this.data.mvdata[i]["tag"].indexOf(e[1]) == -1)
+            f = false;
+        } else if (this.data.mvdata[i]["tag"].indexOf("无氧") != -1) {
+          if (e[2] != "" && this.data.mvdata[i]["tag"].indexOf(e[2]) == -1)
+            f = false;
         }
-        if (this.data.mvdata[i]["tag"].indexOf(e[j]) == -1) {
+      } else {
+        for (let j = 0; j < e.length; j++)
+          if (e[j] == "")
+            continue;
+          else if (this.data.mvdata[i]["tag"].indexOf(e[j]) == -1) {
           f = false;
           break;
         }
@@ -87,35 +96,20 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
+
   onLoad: function (options) {
-    var that = this
-    wx.request({
-      url: "http://localhost:5000/api/getvideo",
-      method: 'get',
-      success(res) {
-        if (res) {
-          for (let index = 0; index < res.data["data"].length; index++) {
-            res.data["data"][index]["cover"] = "http://101.133.237.83:8000" + res.data["data"][index]["cover"]
-            res.data["data"][index]["url"] = "http://101.133.237.83:8000" + res.data["data"][index]["url"]
-          }
-          var arr = new Array();
-          arr[0] = arr[1] = arr[2] = "";
-          console.log(res.data) // 打印查看是否请求到接口数据
-          var tabs = [...arr];
-          that.setData({
-            // 将获取到的数据赋值给数组对象中
-            mvdata: res.data["data"],
-            mvshow: res.data["data"],
-            tags: arr,
-            currentTabs: tabs,
-            utabs: [1, 2, 3, 4, 5, 6, 7, 8, 9]
-          })
-          // 开始获取数据 eg: textBox(获取文字内容)
-        } else {
-          console.log('没有数据')
-        }
-      }
+    var arr = new Array();
+    var app = getApp();
+    arr[0] = arr[1] = arr[2] = "";
+    var tabs = [...arr];
+    this.setData({
+      // 将获取到的数据赋值给数组对象中
+      mvdata: app.globalData.mvdata,
+      mvshow: app.globalData.mvdata,
+      tags: arr,
+      currentTabs: tabs,
     })
+    // 开始获取数据 eg: textBox(获取文字内容)
   },
 
   /**
