@@ -10,12 +10,31 @@ App({
     // 登录
     wx.login({
       success: res => {
+        console.log("login")
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        if (res.code) {
+          wx.request({
+            success(res) {
+              if (res.header['set-cookie'] != '') {
+                wx.setStorageSync('set-cookie', res.header['set-cookie'])
+              }
+            },
+            url: 'http://101.133.237.83:5000/api/getOpenid',
+            data: {
+              code: res.code
+            },
+            header: {
+              'cookie': wx.getStorageSync('set-cookie')
+            }
+          })
+        } else {
+          console.log('登录失败！' + res.errMsg)
+        }
       }
     })
 
     wx.request({
-      url: "http://localhost:5000/api/getvideo",
+      url: "http://101.133.237.83:5000/api/getvideos",
       method: 'get',
       success(res) {
         if (res) {

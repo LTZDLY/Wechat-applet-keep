@@ -6,7 +6,6 @@
 .header {
   width: 750rpx;
   height: 421.875rpx;
-  background-color: rgba(0, 0, 0, 0.08);
 }
 
 .index {
@@ -22,7 +21,6 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  background: rgba(0, 0, 255, 0.2);
 }
 
 .tab-line {

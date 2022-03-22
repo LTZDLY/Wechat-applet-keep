@@ -9,9 +9,6 @@
           </view>
         </swiper-item>
       </block>
-      <swiper-item>
-        <image class="index" src="http://101.133.237.83:8000/source/cover/10002.jpg" mode="aspectFit"></image>
-      </swiper-item>
     </swiper>
   </view>
 
@@ -74,7 +71,7 @@
           {{item.time}}
         </view>
         <view class="tag">
-          {{item.tag}}
+          {{item.tags}}
         </view>
       </view>
     </view>

@@ -6,6 +6,46 @@ Page({
         selected: 1
       })
     }
+    var that = this;
+    wx.request({
+      url: 'http://101.133.237.83:5000/api/getsubscribe',
+      header: {
+        'content-type': 'application/json; charset=utf-8',
+        'cookie': wx.getStorageSync("set-cookie") //读取本地保存好的上一次cookie
+      },
+      success(res) {
+        if (res) {
+          for (let index = 0; index < res.data["data"].length; index++) {
+            res.data["data"][index]["cover"] = "http://101.133.237.83:8000" + res.data["data"][index]["cover"]
+            res.data["data"][index]["url"] = "http://101.133.237.83:8000" + res.data["data"][index]["url"]
+          }
+          console.log(res)
+          that.setData({
+            subscribe: res.data["data"],
+            mvshow: res.data["data"]
+          })
+        }
+      }
+    })
+    wx.request({
+      url: 'http://101.133.237.83:5000/api/gethistory',
+      header: {
+        'content-type': 'application/json; charset=utf-8',
+        'cookie': wx.getStorageSync("set-cookie") //读取本地保存好的上一次cookie
+      },
+      success(res) {
+        if (res) {
+          for (let index = 0; index < res.data["data"].length; index++) {
+            res.data["data"][index]["cover"] = "http://101.133.237.83:8000" + res.data["data"][index]["cover"]
+            res.data["data"][index]["url"] = "http://101.133.237.83:8000" + res.data["data"][index]["url"]
+          }
+          console.log(res)
+          that.setData({
+            history: res.data["data"]
+          })
+        }
+      }
+    })
   },
   data: {
     currentTabs: 0, //预设当前项的值
@@ -15,7 +55,10 @@ Page({
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     canIUseGetUserProfile: false,
-    canIUseOpenData: wx.canIUse('open-data.type.userAvatarUrl') && wx.canIUse('open-data.type.userNickName') // 如需尝试获取用户信息可改为false
+    canIUseOpenData: wx.canIUse('open-data.type.userAvatarUrl') && wx.canIUse('open-data.type.userNickName'), // 如需尝试获取用户信息可改为false
+    subscribe: [],
+    history: [],
+    mvshow: [],
   },
   // 滚动切换标签样式
   switchTab: function (e) {
@@ -33,6 +76,16 @@ Page({
       this.setData({
         currentTabs: cur,
       })
+      if (this.data.currentTabs == 0) {
+        this.setData({
+          mvshow: this.data.subscribe
+        })
+      }
+      else if (this.data.currentTabs == 1) {
+        this.setData({
+          mvshow: this.data.history
+        })
+      }
     }
   },
   // 事件处理函数
@@ -67,6 +120,12 @@ Page({
     this.setData({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
+    })
+  },
+  showVideo: function (e) {
+    let id = e.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: '/pages/video/video?id=' + id,
     })
   }
 })

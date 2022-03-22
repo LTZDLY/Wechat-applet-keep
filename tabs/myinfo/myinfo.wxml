@@ -28,4 +28,30 @@
       </scroll-view>
     </view>
   </view>
+
+  <view class="mvlist">
+    <view wx:for="{{mvshow}}" class="mvbox" bindtap="showVideo" data-id='{{item.id}}'>
+      <image class="cover" src="{{item.cover}}" mode="aspectFill"></image>
+      <view class="describe">
+        <view class="title">
+          {{item.title}}
+        </view>
+        <view class="time">
+          {{item.time}}
+        </view>
+        <view wx:if="{{item.datetime}}">
+          <view class="tag">
+            {{item.datetime}}
+          </view>
+        </view>
+        <view wx:else>
+          <view class="tag">
+            {{item.tags}}
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="divLine"></view>
+  <view class="divText">到底啦</view>
 </view>

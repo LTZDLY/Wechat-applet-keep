@@ -4,13 +4,13 @@ Page({
    * 页面的初始数据
    */
   data: {
-    background: ["DSC_4471-2.jpg", "teachersday.jpg"],
+    background: ["10000.jpg", "10001.jpg", "10002.jpg", "10003.jpg", "10004.jpg"],
     currentTabs: [], //预设当前项的值
     scrollLeft: 0, //tab标题的滚动条位置
     num: 3,
     tabs: ["初级", "中级", "高级"],
     unum: 9,
-    utabs: ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
+    utabs: ["肩", "胸", "臂", "背", "腹", "腰", "臀", "腿", "全身"]
   },
   // 滚动切换标签样式
   switchTab: function (e) {
@@ -64,23 +64,24 @@ Page({
     }
   },
   sift: function (e) {
+    console.log(this.data.mvdata)
     var temp = new Array();
     for (let i = 0; i < this.data.mvdata.length; i++) {
       var f = true;
 
       if (e[0] == "") {
-        if (this.data.mvdata[i]["tag"].indexOf("有氧") != -1) {
-          if (e[1] != "" && this.data.mvdata[i]["tag"].indexOf(e[1]) == -1)
+        if (this.data.mvdata[i]["tags"].indexOf("有氧") != -1) {
+          if (e[1] != "" && this.data.mvdata[i]["tags"].indexOf(e[1]) == -1)
             f = false;
-        } else if (this.data.mvdata[i]["tag"].indexOf("无氧") != -1) {
-          if (e[2] != "" && this.data.mvdata[i]["tag"].indexOf(e[2]) == -1)
+        } else if (this.data.mvdata[i]["tags"].indexOf("无氧") != -1) {
+          if (e[2] != "" && this.data.mvdata[i]["tags"].indexOf(e[2]) == -1)
             f = false;
         }
       } else {
         for (let j = 0; j < e.length; j++)
           if (e[j] == "")
             continue;
-          else if (this.data.mvdata[i]["tag"].indexOf(e[j]) == -1) {
+          else if (this.data.mvdata[i]["tags"].indexOf(e[j]) == -1) {
           f = false;
           break;
         }
