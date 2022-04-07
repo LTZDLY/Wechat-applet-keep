@@ -164,7 +164,7 @@ Page({
   showVideo: function (e) {
     let id = e.currentTarget.dataset.id;
     wx.navigateTo({
-      url: '/pages/video/video?id=' + id,
+      url: `/pages/video/video?id=${id}`,
     })
   }
 })

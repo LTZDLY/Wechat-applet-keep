@@ -19,7 +19,7 @@ App({
                 wx.setStorageSync('set-cookie', res.header['set-cookie'])
               }
             },
-            url: 'http://101.133.237.83:5000/api/getOpenid',
+            url: 'https://api.shinoai.com/wxkeep/api/getOpenid',
             data: {
               code: res.code
             },
@@ -34,13 +34,13 @@ App({
     })
 
     wx.request({
-      url: "http://101.133.237.83:5000/api/getvideos",
+      url: "https://api.shinoai.com/wxkeep/api/getvideos",
       method: 'get',
       success(res) {
         if (res) {
           for (let index = 0; index < res.data["data"].length; index++) {
-            res.data["data"][index]["cover"] = "http://101.133.237.83:8000" + res.data["data"][index]["cover"]
-            res.data["data"][index]["url"] = "http://101.133.237.83:8000" + res.data["data"][index]["url"]
+            res.data["data"][index]["cover"] = "https://shinoai.com/file" + res.data["data"][index]["cover"]
+            res.data["data"][index]["url"] = "https://shinoai.com/file" + res.data["data"][index]["url"]
           }
           var arr = new Array();
           arr[0] = arr[1] = arr[2] = "";

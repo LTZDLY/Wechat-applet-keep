@@ -16,17 +16,17 @@ Page({
     var that = this;
     var app = getApp();
     wx.request({
-      url: 'http://101.133.237.83:5000/api/getvideodetails?id=' + options.id,
+      url: 'https://api.shinoai.com/wxkeep/api/getvideodetails?id=' + options.id,
       method: "get",
       success(res) {
         if (res) {
           // console.log(res.data) // 打印查看是否请求到接口数据
-          res.data["cover"] = "http://101.133.237.83:8000" + res.data["cover"]
-          res.data["url"] = "http://101.133.237.83:8000" + res.data["url"]
+          res.data["cover"] = "https://shinoai.com/file" + res.data["cover"]
+          res.data["url"] = "https://shinoai.com/file" + res.data["url"]
           var vid = res.data["id"]
 
           wx.request({
-            url: 'http://101.133.237.83:5000/api/getsubscribe',
+            url: 'https://api.shinoai.com/wxkeep/api/getsubscribe',
             header: {
               'content-type': 'application/json; charset=utf-8',
               'cookie': wx.getStorageSync("set-cookie") //读取本地保存好的上一次cookie
@@ -136,7 +136,7 @@ Page({
 
     var that = this;
     wx.request({
-      url: 'http://101.133.237.83:5000/api/subscribe',
+      url: 'https://api.shinoai.com/wxkeep/api/subscribe',
       method: 'POST',
       data: {
         "videoid": this.data.mvinfo["id"],

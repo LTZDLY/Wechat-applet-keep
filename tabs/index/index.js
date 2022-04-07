@@ -38,15 +38,22 @@ Page({
     }
 
   },
-  bindViewTap() {
+  bindViewTap(e) {
+    let page = e.currentTarget.dataset.page;
     wx.navigateTo({
-      url: '../../pages/search/search'
+      url: `../../pages/${page}/${page}`
     })
   },
   unusable: function (e) {
     wx.showToast({
       icon: 'none',
       title: '前面的区域，以后再来探索吧',
+    })
+  },
+  showVideo: function (e) {
+    let id = e.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: `/pages/video/video?id=${id}`,
     })
   }
 })

@@ -8,19 +8,21 @@
   <view class="empty">
   </view>
 
-  <view class="info">
-    <view class="title">
-      {{mvinfo.title}}
+  <view>
+    <view class="info">
+      <view class="title">
+        {{mvinfo.title}}
+      </view>
+      <button class="mini-btn" type="primary" size="mini"
+        style="height:70rpx;line-height:70rpx;font-size:30rpx;width:200rpx;margin-top:15rpx;margin-bottom:15rpx;"
+        plain="{{subscribe}}" bindtap="subscribe">
+        {{subscribe ? '♥ 已收藏' : '♡ 收藏'}}
+      </button>
     </view>
-    <button class="mini-btn" type="primary" size="mini"
-      style="height:70rpx;line-height:70rpx;font-size:30rpx;width:200rpx;margin-top:15rpx;margin-bottom:15rpx;"
-      plain="{{subscribe}}" bindtap="subscribe">
-      {{subscribe ? '♥ 已收藏' : '♡ 收藏'}}
-    </button>
-  </view>
 
-  <view class="divLine"></view>
-  <scroll-view scroll-y class="tab-h">
+    <view class="divLine" style="position: fixed; margin-top:100rpx;"></view>
+  </view>
+  <view scroll-y class="tab-h">
 
     <view class="other">
       相关视频
@@ -46,5 +48,5 @@
     <view class="divLine"></view>
     <view class="divText">到底啦</view>
 
-  </scroll-view>
+  </view>
 </view>

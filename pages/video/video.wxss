@@ -17,7 +17,7 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  height: 425rpx;
+  height: 421.875rpx;
   line-height: 300rpx;
 }
 
@@ -26,6 +26,8 @@
   line-height: 100rpx;
   width: 100%;
   display: flex;
+  position: fixed;
+  background-color: rgba(255,255,255,1);
 }
 
 .title {
@@ -50,7 +52,7 @@ button {
 }
 
 .tab-h {
-  height: 600rpx;
+  height: auto;
   width: 100%;
   box-sizing: border-box;
   overflow: hidden;

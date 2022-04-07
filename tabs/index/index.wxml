@@ -14,14 +14,15 @@
 
   <view class="table">
     <view class="line">
-      <view class="lable" bindtap="bindViewTap">
+      <view class="lable" bindtap="bindViewTap" data-page="search">
         <image class="l_img" src="/image/0.png"></image>
         <view class="l_txt">课程</view>
       </view>
-      <view class="lable" bindtap="unusable">
+      <view class="lable" bindtap="bindViewTap" data-page="live">
         <image class="l_img" src="/image/1.png"></image>
-        <view class="l_txt">打卡</view>
+        <view class="l_txt">直播</view>
       </view>
+      <!--
       <view class="lable" bindtap="unusable">
         <image class="l_img" src="/image/2.png"></image>
         <view class="l_txt">交友</view>
@@ -34,6 +35,7 @@
         <image class="l_img" src="/image/4.png"></image>
         <view class="l_txt">私教</view>
       </view>
+      -->
     </view>
   </view>
 

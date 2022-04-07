@@ -43,7 +43,7 @@
       <view class="divLine"></view>
     </view>
 
-
+    <!--
     <view wx:if="{{currentTabs[0]!=1}}">
       <view class="tab-line">
         <view class="tab-title">无氧运动部位</view>
@@ -58,8 +58,8 @@
       </view>
       <view class="divLine"></view>
     </view>
+    -->
   </view>
-
   <view class="mvlist">
     <view wx:for="{{mvshow}}" class="mvbox" bindtap="showVideo" data-id='{{item.id}}'>
       <image class="cover" src="{{item.cover}}" mode="aspectFill"></image>

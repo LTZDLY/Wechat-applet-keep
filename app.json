@@ -3,7 +3,8 @@
     "tabs/index/index",
     "pages/video/video",
     "pages/search/search",
-    "tabs/myinfo/myinfo"
+    "tabs/myinfo/myinfo",
+    "pages/live/live"
   ],
   "tabBar": {
     "custom": true,

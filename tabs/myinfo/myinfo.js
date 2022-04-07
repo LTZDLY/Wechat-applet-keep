@@ -8,7 +8,7 @@ Page({
     }
     var that = this;
     wx.request({
-      url: 'http://101.133.237.83:5000/api/getsubscribe',
+      url: 'https://api.shinoai.com/wxkeep/api/getsubscribe',
       header: {
         'content-type': 'application/json; charset=utf-8',
         'cookie': wx.getStorageSync("set-cookie") //读取本地保存好的上一次cookie
@@ -16,8 +16,8 @@ Page({
       success(res) {
         if (res) {
           for (let index = 0; index < res.data["data"].length; index++) {
-            res.data["data"][index]["cover"] = "http://101.133.237.83:8000" + res.data["data"][index]["cover"]
-            res.data["data"][index]["url"] = "http://101.133.237.83:8000" + res.data["data"][index]["url"]
+            res.data["data"][index]["cover"] = "https://shinoai.com/file" + res.data["data"][index]["cover"]
+            res.data["data"][index]["url"] = "https://shinoai.com/file" + res.data["data"][index]["url"]
           }
           console.log(res)
           that.setData({
@@ -28,7 +28,7 @@ Page({
       }
     })
     wx.request({
-      url: 'http://101.133.237.83:5000/api/gethistory',
+      url: 'https://api.shinoai.com/wxkeep/api/gethistory',
       header: {
         'content-type': 'application/json; charset=utf-8',
         'cookie': wx.getStorageSync("set-cookie") //读取本地保存好的上一次cookie
@@ -36,8 +36,8 @@ Page({
       success(res) {
         if (res) {
           for (let index = 0; index < res.data["data"].length; index++) {
-            res.data["data"][index]["cover"] = "http://101.133.237.83:8000" + res.data["data"][index]["cover"]
-            res.data["data"][index]["url"] = "http://101.133.237.83:8000" + res.data["data"][index]["url"]
+            res.data["data"][index]["cover"] = "https://shinoai.com/file" + res.data["data"][index]["cover"]
+            res.data["data"][index]["url"] = "https://shinoai.com/file" + res.data["data"][index]["url"]
           }
           console.log(res)
           that.setData({

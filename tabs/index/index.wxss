@@ -36,7 +36,8 @@
   flex-direction: column;
   align-items: center;
   margin-bottom: 10rpx;
-  margin-left: 18rpx;
+  margin-left: 122.5rpx;
+  margin-right: 122.5rpx;
   flex: 0 0 130rpx
 }
 
